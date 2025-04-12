@@ -1,0 +1,76 @@
+/* You can add global styles to this file, and also import other style files */
+
+.container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #eb0d0d, #1e09e0);
+  }
+  
+  .card-login {
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(211, 39, 39, 0.1);
+    background-color: rgb(62, 176, 252);
+  }
+  
+  .btn-login {
+    background-color: #007bff;
+    color: white;
+    border: none;
+  }
+  .btn-login:hover {
+    background-color: #0056b3;
+  }
+
+
+.container-tabla {
+    padding: 1.5rem;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, #46a7f1, #bf321a); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .table {
+    border: none;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #ffffff;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #c8dbe3; 
+  }
+  
+  .table-dark th {
+    background-color: #004085;
+    color: white;
+    text-align: center; 
+  }
+
+
+.container-formulario {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #e02b14, #0b7ef0); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .form-control {
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+  }
+  
+  .btn-formulario {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease; 
+  }
+  .btn-formulario:hover {
+    background-color: #0056b3;
+  }

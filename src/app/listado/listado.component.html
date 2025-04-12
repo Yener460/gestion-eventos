@@ -1,0 +1,30 @@
+<div class="container container-tabla mt-4">
+  <h2>Listado de Eventos</h2>
+  <div class="mb-3 text-end">
+    <button class="btn btn-primary btn-sm" (click)="navegarCrearEvento()">Crear Evento</button>
+  </div>
+  <table class="table table-striped table-hover table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Numero</th>
+        <th scope="col">Nombre del Evento</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let evento of eventos; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ evento.nombre }}</td>
+        <td>{{ evento.fecha }}</td>
+        <td>
+          <button class="btn btn-primary btn-sm" (click)="editarEvento(evento.id)">Editar</button>
+          <button class="btn btn-danger btn-sm" (click)="eliminarEvento(evento.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
