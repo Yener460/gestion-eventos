@@ -10,15 +10,15 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class EditarEventoComponent  {
-  evento = { id: 0, nombre: '', fecha: '' };
+  evento = { id: 0, nombre: '', fecha: '', descripcion:'' };
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     const eventos = [
-      { id: 1, nombre: 'Concierto de Rock', fecha: '2025-04-20' },
-      { id: 2, nombre: 'Fiesta de Año Nuevo', fecha: '2025-12-31' },
+      { id: 1, nombre: 'Concierto de Rock', fecha: '2025-04-20',descripcion:'matrimonio' },
+      { id: 2, nombre: 'Fiesta de Año Nuevo', fecha: '2025-12-31', descripcion:'matrimonio' },
     ];
     this.evento = eventos.find(evento => evento.id === id) || this.evento;
   }

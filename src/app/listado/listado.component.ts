@@ -12,8 +12,8 @@ import { CommonModule } from '@angular/common';
 
 export class ListadoComponent {
   eventos = [
-    { id: 1, nombre: 'Concierto de Rock', fecha: '2025-04-20' },
-    { id: 2, nombre: 'Fiesta de Año Nuevo', fecha: '2025-12-31' },
+    { id: 1, nombre: 'Concierto de Rock', fecha: '2025-04-20', descripcion:'matrimonio' },
+    { id: 2, nombre: 'Fiesta de Año Nuevo', fecha: '2025-12-31', descripcion:'matrimonio' },
   ];
 
   constructor(private router: Router) {}
