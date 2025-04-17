@@ -3,15 +3,18 @@
   <form (ngSubmit)="guardarCambios()">
     <div class="mb-3">
       <label for="nombre" class="form-label">Nombre del Evento</label>
-      <input type="text" class="form-control" id="nombre" [(ngModel)]="evento.nombre" name="nombre" required
+      <input [(ngModel)]="evento.nombre" type="text" class="form-control" id="nombre"  name="nombre" required
       />
     </div>
     <div class="mb-3">
       <label for="fecha" class="form-label">Fecha del Evento</label>
-      <input type="date" class="form-control" id="fecha" [(ngModel)]="evento.fecha" name="fecha" required />
+      <input [(ngModel)]="evento.fecha" type="date" class="form-control" id="fecha"  name="fecha" required />
     </div>
-    <button type="submit" class="btn btn-formulario btn-block">Guardar Cambios</button>
+    <div class="mb-3">
+      <label for="descripcion" class="form-label">Descripción</label>
+      <textarea [(ngModel)]="evento.descripcion" class="form-control" id="descripcion"  name="descripcion" required></textarea>
+    </div>
+    <button type="button" class="btn btn-formulario btn-block" (click)="guardarCambios()">Guardar Cambios</button>
+
   </form>
 </div>
-
-

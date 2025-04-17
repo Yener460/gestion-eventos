@@ -9,7 +9,7 @@
   background-size: cover;
 }
 
-.card-login {
+.cuadro-login {
   padding: 5rem;
   border-radius: 10px;
   width: auto;
@@ -19,7 +19,7 @@
   box-shadow: 0 4px 6px rgba(211, 39, 39, 0.1);
   color: white;
 }
-.card-login h1{
+.cuadro-login h1{
   font-size: 36px;
   text-align: center;
   text-shadow: 2px 2px black;
@@ -29,22 +29,24 @@
   background-color: #1bd8f5;
   color: white;
   border: none;
+  border-radius: 5px;
+  padding: 0.75rem 1.5rem;
+  transition: background-color 0.3s ease-in-out;
 }
 .btn-login:hover {
-  background-color: #c4ed1e;
+  background-color: #005f80;
 }
 
-body  {
 
+body  {
 background: url('imagenes/evento5.jpg') no-repeat center center;
 background-size: cover;
-align-items: center;
-min-height: 100vh;
-background-size: cover;
+font-family: 'Times New Roman', Times, serif;
+line-height: 1.6;
 
 }
 .container-tabla {
-  max-width: 900px ;
+  max-width: 1000px ;
   margin: 2rem auto;
   padding: 3rem;
   align-items: center;
@@ -59,25 +61,42 @@ background-size: cover;
   font-size: 36px;
   text-align: center;
   color: #ffffff;
-  text-shadow: 2px 2px black;
-}
-
+  text-shadow: 2px 2px black;}
 .table {
-  border: none;
-}
-
+  border: none;}
 .table-striped tbody tr:nth-of-type(odd) {
-  background-color: #ffffff;
-}
-
+  background-color: #ffffff;}
 .table-hover tbody tr:hover {
   background-color: #c8dbe3; 
 }
-
 .table-dark th {
   background-color: #68d30a;
   color: white;
   text-align: center; 
+}
+.btn-editar {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn-editar:hover {
+  background-color: #45a049;
+}
+.btn-eliminar {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn-eliminar:hover {
+  background-color: #e53935;
 }
 
 
@@ -110,11 +129,16 @@ background-size: cover;
 }
 
 .btn-formulario {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
   background-color: #007bff;
   color: white;
-  border: none;
-  transition: background-color 0.3s ease; 
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 .btn-formulario:hover {
-  background-color: #d4eb06;
+  background-color: #0056b3;
+  color: #ffffff;
 }

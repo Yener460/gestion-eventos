@@ -1,7 +1,7 @@
 <div class="container-tabla">
   <h2>Listado de Eventos</h2>
   <div class="mb-3 text-end">
-    <button class="btn btn-primary btn-sm" (click)="navegarCrearEvento()">Crear Evento</button>
+    <button class="btn-login" (click)="navegarCrearEvento()">Crear Evento</button>
   </div>
   <table class="table table-striped table-hover table-bordered">
     <thead class="table-dark">
@@ -18,16 +18,12 @@
       <tr *ngFor="let evento of eventos; let i = index">
         <td>{{ i + 1 }}</td>
         <td>{{ evento.nombre }}</td>
-        <td>{{ evento.fecha }}</td>
-        <td>{{ evento.descripcion }}</td>
+        <td>{{ evento.fecha | date:'yyyy-MM-dd' }}</td>
+        <td>{{ evento.descripcion  }}</td>
         <td>
-          <button class="btn btn-primary btn-sm" (click)="editarEvento(evento.id)">Editar</button>
-          <button class="btn btn-danger btn-sm" (click)="eliminarEvento(evento.id)">Eliminar</button>
+          <button class="btn-editar" (click)="editarEvento(evento.id)">Editar</button>
+          <button class="btn-eliminar" (click)="eliminarEvento(evento.id)">Eliminar</button>
         </td>
       </tr>
     </tbody>
   </table>
-</div>
-
-
-

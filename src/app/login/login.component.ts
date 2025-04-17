@@ -13,7 +13,7 @@ export class LoginComponent {
   password: string = '';
 
   constructor(private router: Router) {}
-  onLogin() {
+  Login() {
     if (this.email === 'yandresroav@gmail.com' && this.password === '30431790Yr') {
       alert('Inicio de sesión exitoso');
       this.router.navigate(['/listado']);

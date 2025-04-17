@@ -1,20 +1,20 @@
 <div class="container-formulario">
     <h2>Crear Eventos</h2>
-    <form>
+    <form (ngSubmit)="crearEvento()">
       <div class="mb-3">
         <label for="nombreEvento" class="form-label">Nombre del Evento</label>
-        <input type="text" class="form-control" id="nombreEvento" placeholder="Ingresa el nombre del evento" required>
+        <input (input)="actualizarEvento($event, 'nombre')" type="text" name="nombre" class="form-control" id="nombreEvento" placeholder="Ingresa el nombre del evento" required>
       </div>
       <div class="mb-3">
         <label for="fechaEvento" class="form-label">Fecha del Evento</label>
-        <input type="date" class="form-control" id="fechaEvento" required>
+        <input (input)="actualizarEvento($event, 'fecha')" type="date" name="fecha" class="form-control" id="fechaEvento" required>
       </div>
       <div class="mb-3">
         <label for="descripcionEvento" class="form-label">Descripción</label>
-        <textarea class="form-control" id="descripcionEvento" rows="3" placeholder="Escribe una breve descripción" required></textarea>
+        <textarea (input)="actualizarEvento($event, 'descripcion')" class="form-control" name="descripcion" id="descripcionEvento" rows="3" placeholder="Escribe una breve descripción" required></textarea>
       </div>
-      <button type="submit" class="btn btn-formulario btn-block">Guardar</button>
-      <button type="reset" class="btn btn-formulario btn-block">Limpiar</button>
+      <button type="submit"  class="btn btn-formulario " (click)="crearEvento()">Guardar</button>
+      <button type="reset" class="btn btn-formulario ">Limpiar</button>
+      <a href="/listado" class="btn btn-formulario ">Listado</a>
     </form>
   </div>
-

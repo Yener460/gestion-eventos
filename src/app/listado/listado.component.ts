@@ -1,37 +1,50 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
+import { EventoService } from '../evento.service';
+import axios from 'axios';
 @Component({
   selector: 'app-listado',
   imports: [CommonModule],
   templateUrl: './listado.component.html',
   styleUrl: './listado.component.css'
 })
+export class ListadoComponent implements OnInit{
+  evento: any = { id: 0, nombre: '', fecha: '', descripcion: '' }; 
+  eventos: any[] = [];
+  constructor(private router: Router, private eventoService: EventoService) {}
+  ngOnInit(): void {
+    this.cargarEventos();
+  }
+  async editarEvento(id: number): Promise<void> {
+    this.router.navigate(['/editar-evento', id]);
+}
 
 
-export class ListadoComponent {
-  eventos = [
-    { id: 1, nombre: 'Concierto de Rock', fecha: '2025-04-20', descripcion:'matrimonio' },
-    { id: 2, nombre: 'Fiesta de Año Nuevo', fecha: '2025-12-31', descripcion:'matrimonio' },
-  ];
-
-  constructor(private router: Router) {}
+async cargarEventos(): Promise<void> {
+  try {
+      this.eventos = await this.eventoService.obtenerTodosLosEventos(); 
+      console.log('Eventos cargados:', this.eventos);
+  } catch (error) {
+      console.error('Error al cargar eventos:', error);
+  }
+}
 
   navegarCrearEvento() {
     this.router.navigate(['/crear-evento']); 
   }
-
-  editarEvento(id: number) {
-    console.log(`Redirigiendo al evento con ID: ${id}`);
-    this.router.navigate([`/editar-evento`, id]); 
-  }
-
-  eliminarEvento(id: number) {
-    if (confirm('¿Estás seguro de que deseas eliminar este evento?')) {
-      this.eventos = this.eventos.filter(evento => evento.id !== id);
-      alert('Evento eliminado correctamente');
+  
+  async eliminarEvento(id: number): Promise<void> {
+    if (confirm('¿Estás seguro de que deseas eliminar este evento?'))
+    try {
+      await this.eventoService.eliminarEvento(id);
+      console.log('Evento eliminado exitosamente');
+      this.cargarEventos(); // Recarga la lista después de eliminar
+    } catch (error) {
+      console.error('Error al eliminar evento:', error);
     }
   }
+  
+
 }
 

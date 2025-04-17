@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-
 import { ListadoComponent } from './listado/listado.component';
 import { CrearEventoComponent } from './crear-evento/crear-evento.component';
 import { EditarEventoComponent } from './editar-evento/editar-evento.component';
